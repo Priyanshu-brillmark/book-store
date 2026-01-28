@@ -139,39 +139,53 @@ This creates an optimized build in the `build/` directory.
 
 ## Deployment to GitHub Pages
 
-1. **Install gh-pages package** (if not already installed)
+The project is already configured for GitHub Pages deployment! Follow these steps:
+
+1. **Create a GitHub repository** (if you haven't already)
+   - Go to GitHub and create a new repository named `book-store`
+
+2. **Update homepage in package.json**
+   - Open `package.json`
+   - Replace `yourusername` in the `homepage` field with your GitHub username:
+     ```json
+     "homepage": "https://YOUR_USERNAME.github.io/book-store"
+     ```
+
+3. **Initialize Git and push to GitHub**
+
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin https://github.com/YOUR_USERNAME/book-store.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+4. **Install gh-pages** (if not already installed)
 
    ```bash
    npm install --save-dev gh-pages
    ```
 
-2. **Update package.json**
-   Add these scripts:
-
-   ```json
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
-   }
-   ```
-
-3. **Update homepage** in `package.json`
-
-   ```json
-   "homepage": "https://yourusername.github.io/book-store"
-   ```
-
-4. **Deploy**
+5. **Deploy to GitHub Pages**
 
    ```bash
    npm run deploy
    ```
 
-5. **Enable GitHub Pages**
-   - Go to your repository settings on GitHub
-   - Navigate to Pages section
-   - Select `gh-pages` branch as the source
-   - Your site will be available at `https://yourusername.github.io/book-store`
+6. **Enable GitHub Pages**
+   - Go to your repository on GitHub
+   - Click "Settings" → "Pages"
+   - Under "Source", select `gh-pages` branch
+   - Click "Save"
+
+7. **Access your site**
+   Your site will be available at: `https://YOUR_USERNAME.github.io/book-store`
+
+**Note**: The app uses HashRouter for GitHub Pages compatibility. URLs will include `#` (e.g., `/#/cart`, `/#/admin`).
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Features in Detail
 
