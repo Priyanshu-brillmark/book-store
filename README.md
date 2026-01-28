@@ -139,19 +139,19 @@ This creates an optimized build in the `build/` directory.
 
 ## Deployment to GitHub Pages
 
-The project is already configured for GitHub Pages deployment! Follow these steps:
+The project includes **GitHub Actions workflow** for automatic deployment! 🚀
 
-1. **Create a GitHub repository** (if you haven't already)
-   - Go to GitHub and create a new repository named `book-store`
+### Quick Setup:
+
+1. **Create a GitHub repository** named `book-store`
 
 2. **Update homepage in package.json**
-   - Open `package.json`
-   - Replace `yourusername` in the `homepage` field with your GitHub username:
+   - Replace `yourusername` with your GitHub username:
      ```json
      "homepage": "https://YOUR_USERNAME.github.io/book-store"
      ```
 
-3. **Initialize Git and push to GitHub**
+3. **Push to GitHub**
 
    ```bash
    git init
@@ -162,26 +162,14 @@ The project is already configured for GitHub Pages deployment! Follow these step
    git push -u origin main
    ```
 
-4. **Install gh-pages** (if not already installed)
+4. **Enable GitHub Pages**
+   - Go to repository → **Settings** → **Pages**
+   - Under "Source", select **GitHub Actions**
+   - The workflow will automatically deploy your site!
 
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-
-5. **Deploy to GitHub Pages**
-
-   ```bash
-   npm run deploy
-   ```
-
-6. **Enable GitHub Pages**
-   - Go to your repository on GitHub
-   - Click "Settings" → "Pages"
-   - Under "Source", select `gh-pages` branch
-   - Click "Save"
-
-7. **Access your site**
-   Your site will be available at: `https://YOUR_USERNAME.github.io/book-store`
+5. **Access your site**
+   - Available at: `https://YOUR_USERNAME.github.io/book-store`
+   - **Auto-deploys** on every push to `main` branch! ✨
 
 **Note**: The app uses HashRouter for GitHub Pages compatibility. URLs will include `#` (e.g., `/#/cart`, `/#/admin`).
 
