@@ -21,7 +21,8 @@ const BookList = () => {
     const category = searchParams.get("category") || "All";
     setSearchTerm(search);
     setSelectedCategory(category);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run once on mount
 
   useEffect(() => {
     let filtered = books;
@@ -45,7 +46,7 @@ const BookList = () => {
       search: searchTerm,
       category: selectedCategory,
     });
-  }, [searchTerm, selectedCategory, books]);
+  }, [searchTerm, selectedCategory, books, setSearchParams]);
 
   const categories = ["All", ...new Set(books.map((book) => book.category))];
 
